@@ -43,45 +43,49 @@ def is_valid_password(password):
     return True
 
 
-"""Program to get and check a user's password."""
-print("This script allows you to analyze your password and see if it meets the required parameters. ")
-MIN_LENGTH = int(input("Enter min length for your password --> "))
-MAX_LENGTH = int(input("Enter max length for your password --> "))
+def main ():
+    """Program to get and check a user's password."""
+    print("This script allows you to analyze your password and see if it meets the required parameters. ")
+    MIN_LENGTH = int(input("Enter min length for your password --> "))
+    MAX_LENGTH = int(input("Enter max length for your password --> "))
 
-while True:
-    UPPER_CASE = input("Do you want to use at least one upper case character (y/n) n --> ")
-    if UPPER_CASE == "Y" or UPPER_CASE == "y":
-        UPPER_CASE = "True"
-    else:
-        UPPER_CASE = "False"
-    break
-""" Remove # if you want implement also lower case"""
-#while True:
-    #LOWER_CASE = input("Do you want to use at least one lower case character (y/n) n --> ")
-    #if LOWER_CASE == "Y" or LOWER_CASE == "y":
-        #LOWER_CASE = "True"
-    #else:
-        #LOWER_CASE = "False"
-    #break
-while True:
-    print("Set of special characters", SPECIAL_CHARACTERS)
-    SPECIAL_CHARS_REQUIRED = input("Do you want to use a special character (y/n) n --> ")
-    if SPECIAL_CHARS_REQUIRED == "Y" or SPECIAL_CHARS_REQUIRED == "y":
-        SPECIAL_CHARS_REQUIRED = "True"
-    else:
-        SPECIAL_CHARS_REQUIRED = "False"
-    break
-while True:
-    DIGIT = input("Do you want to use at least one digit (y/n) n --> ")
-    if DIGIT == "Y" or DIGIT == "y":
-        DIGIT = "True"
-    else:
-        DIGIT = "False"
-    break
+    while True:
+        UPPER_CASE = input("Do you want to use at least one upper case character (y/n) n --> ")
+        if UPPER_CASE == "Y" or UPPER_CASE == "y":
+            UPPER_CASE = "True"
+        else:
+            UPPER_CASE = "False"
+        break
+    """ Remove # if you want implement also lower case"""
+    #while True:
+        #LOWER_CASE = input("Do you want to use at least one lower case character (y/n) n --> ")
+        #if LOWER_CASE == "Y" or LOWER_CASE == "y":
+            #LOWER_CASE = "True"
+        #else:
+            #LOWER_CASE = "False"
+        #break
+    while True:
+        print("Set of special characters", SPECIAL_CHARACTERS)
+        SPECIAL_CHARS_REQUIRED = input("Do you want to use a special character (y/n) n --> ")
+        if SPECIAL_CHARS_REQUIRED == "Y" or SPECIAL_CHARS_REQUIRED == "y":
+            SPECIAL_CHARS_REQUIRED = "True"
+        else:
+            SPECIAL_CHARS_REQUIRED = "False"
+        break
+    while True:
+        DIGIT = input("Do you want to use at least one digit (y/n) n --> ")
+        if DIGIT == "Y" or DIGIT == "y":
+            DIGIT = "True"
+        else:
+            DIGIT = "False"
+        break
 
-password = input("Enter your password --> ")
-
-while not is_valid_password(password):
-    print("Invalid password!")
     password = input("Enter your password --> ")
-print("Your password is valid and made of {} characters and is {}".format(len(password), password))
+
+    while not is_valid_password(password):
+        print("Invalid password!")
+        password = input("Enter your password --> ")
+    print("Your password is valid and made of {} characters and is {}".format(len(password), password))
+
+
+main()
