@@ -3,7 +3,14 @@ CP1404/CP5632 - Practical - Suggested Solution
 Password checker built from "skeleton" code to help you get started
 """
 
+""" My constants"""
 SPECIAL_CHARACTERS = "!@#$%^&*()_-=+`~,./'[]<>?{}|\\"
+MIN_LENGTH = 1
+MAX_LENGTH = 1
+UPPER_CASE = "False"
+LOWER_CASE = "False"
+SPECIAL_CHARS_REQUIRED = "False"
+DIGIT = 0
 
 
 def is_valid_password(password):
@@ -14,7 +21,7 @@ def is_valid_password(password):
 
     password_upper = 0
     """ Remove # if you want implement also lower case"""
-    #password_lower = 0
+    password_lower = 0
     special_characters = 0
     digit = 0
 
@@ -30,9 +37,9 @@ def is_valid_password(password):
         if password_upper == 0:
             return False
     """ Remove # if you want implement also lower case"""
-    #if LOWER_CASE == "True":
-        #if password_lower == 0:
-            #return False
+    if LOWER_CASE == "True":
+        if password_lower == 0:
+            return False
     if DIGIT == "True":
         if digit == 0:
             return False
@@ -43,7 +50,8 @@ def is_valid_password(password):
     return True
 
 
-def main ():
+def main():
+
     """Program to get and check a user's password."""
     print("This script allows you to analyze your password and see if it meets the required parameters. ")
     MIN_LENGTH = int(input("Enter min length for your password --> "))
@@ -57,13 +65,13 @@ def main ():
             UPPER_CASE = "False"
         break
     """ Remove # if you want implement also lower case"""
-    #while True:
-        #LOWER_CASE = input("Do you want to use at least one lower case character (y/n) n --> ")
-        #if LOWER_CASE == "Y" or LOWER_CASE == "y":
-            #LOWER_CASE = "True"
-        #else:
-            #LOWER_CASE = "False"
-        #break
+    while True:
+        LOWER_CASE = input("Do you want to use at least one lower case character (y/n) n --> ")
+        if LOWER_CASE == "Y" or LOWER_CASE == "y":
+            LOWER_CASE = "True"
+        else:
+            LOWER_CASE = "False"
+        break
     while True:
         print("Set of special characters", SPECIAL_CHARACTERS)
         SPECIAL_CHARS_REQUIRED = input("Do you want to use a special character (y/n) n --> ")
