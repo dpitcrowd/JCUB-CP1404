@@ -9,15 +9,20 @@ if-elif-else 'ladder' you can.
 The intention is that the score must be between 0 and 100 inclusive; 
 90 or more is excellent; 50 or more is a pass; below 50 is bad.
 """
-score = 0
-score = float(input("Enter score: "))
-while score < 0 or score > 100:
-    print("Invalid score")
-    score = float(input("Enter score: "))
 
-if score >= 90:
-    print("Excellent")
-elif score >= 50:
-    print("Passable")
-else:
-    print("Bad")
+
+def main():
+
+    score = float(input("Enter score: "))
+    while score < 0 or score > 100:
+        print("Invalid score")
+        score = float(input("Enter score: "))
+
+    if score >= 90:
+        print("Excellent")
+    elif score >= 50:
+        print("Passable")
+    else:
+        print("Bad")
+
+main()
