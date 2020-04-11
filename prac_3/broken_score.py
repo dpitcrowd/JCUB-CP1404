@@ -11,18 +11,33 @@ The intention is that the score must be between 0 and 100 inclusive;
 """
 
 
-def main():
+def result(score):
+    """ Print the final score"""
+    if score >= 90:
+        print("Your final result is Excellent")
+    elif score >= 50:
+        print("Your final result is Passable")
+    else:
+        print("Your final result is Bad")
+    print()
 
-    score = float(input("Enter score: "))
+
+def main():
+    """ Main function"""
+    import random
+
+    score = float(input("Enter score: "))            # Get the score
     while score < 0 or score > 100:
+        """ Check input"""
         print("Invalid score")
         score = float(input("Enter score: "))
 
-    if score >= 90:
-        print("Excellent")
-    elif score >= 50:
-        print("Passable")
-    else:
-        print("Bad")
+    """ Run result function to print the final result"""
+    result(score)
+
+    """ Run result function to print random result"""
+    score = random.randint(0,100)
+    result(score)
+    print("The random score was {}".format(score))
 
 main()
