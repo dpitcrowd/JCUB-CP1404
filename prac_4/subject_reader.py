@@ -8,9 +8,9 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    #print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    print(data)
-    my_data = my_function(data)
+    #print(data)
+
+    my_function(data)
 
 
 def get_data():
@@ -38,7 +38,6 @@ def my_function(data):
 
     for x in data:
         print("{} is taught by {:>12} and has {:>3} students".format(x[0], x[1], x[2]))
-
 
 
 main()
