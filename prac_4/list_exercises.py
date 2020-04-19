@@ -5,13 +5,49 @@ List exercises
 
 
 def main():
-    """ Numbers """
+    menu = '''
+    1. NUMBERS
+    2. PASSWORD
+    3. EXIT
+    '''
+    print(menu)
+    #menu_choice = input('Choose which exercise --> ')
+    menu_choice = check_int()
+    #print(menu_choice)
+    while menu_choice != 1 or menu_choice != 2 or menu_choice != 3:
+        if menu_choice == 1:
+            my_numbers()
+        elif menu_choice == 2:
+            my_password()
+        elif menu_choice == 3:
+            exit('THANKS')
+        else:
+            print('Your choice in not in the menu')
+        print(menu)
+        menu_choice = check_int()
+
+
+def my_password():
+    '''2 Woefully inadequate security checker'''
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface',
+                 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
+                 'bob']
+    name = input('\nEnter your name --> ')
+    if name in usernames:
+        print('ACCESS GRANTED')
+    else:
+        print('!!! ACCESS DENIED !!!')
+
+
+def my_numbers():
+    """1 Numbers """
     numbers = []
-    for i in range(5):
-        print('Please give me your {}th number \n'.format(i+1))
+    print('\nPlease insert how many numbers')
+    choice = check_int()
+    for i in range(choice):
+        print('\nPlease give me your {}th number'.format(i + 1))
         number = check_int()
         numbers.append(number)
-
     ''' Show the inserted number'''
     print("The first number is", numbers[0])
     print("The last number is", numbers[-1])
