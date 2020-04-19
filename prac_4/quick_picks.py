@@ -4,18 +4,28 @@
 
 import random
 
-LINE = 6
+#LINE = 1
 MIN_NUM = 1
 MAX_NUM = 45
-MENU = "Choose a number between 1 and 45"
+MENU = """
+       Choose a number between 1 and 45
+       then how  many lines you need to
+            (by default is 6 line)
+       """
+
 
 def main():
     """ Random numbers"""
+    LINE = 0
     print(MENU)
     quick_pick = check_int()
-    while quick_pick <= 0 or quick_pick > 45:
+    #LINE = check_int()
+    while int(quick_pick) <= 0 or int(quick_pick) > 45:
         print('\nThe number {} inserted is not valid !!!'.format(quick_pick))
         quick_pick = check_int()
+    LINE = check_int()
+    if int(LINE) < 6:
+        LINE = 6
 
     quick_picks = []
     for i in range(quick_pick):
@@ -26,7 +36,7 @@ def main():
             quick_picks.append(num)
         quick_picks.sort()
 
-    print(quick_picks)
+        print(" ".join("{:2}".format(number) for number in quick_picks))
 
 
 def check_int():
@@ -40,7 +50,7 @@ def check_int():
             pass
         except ValueError:
             number = input("Please enter an integer --> ")
-        return int(number)
+    return number
 
 
 main()
