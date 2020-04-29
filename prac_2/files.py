@@ -31,9 +31,13 @@
 
 """ Read numbers.txt file"""
 my_list = []
+
+
 def my_add(a, b):
     add = a + b
     return add
+
+
 temp_file =open("numbers.txt", "r")
 for line in temp_file:
     my_list.append(line)
