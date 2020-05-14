@@ -1,0 +1,31 @@
+BoxLayout:
+
+    orientation: 'vertical'
+    TextInput:
+        id: input_distance
+        text: ''
+        font_size: 48
+
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'KMS'
+            color: (0, 0, 0, 1)
+            on_release: app.handle_calculate_mi()
+        Button:
+            text: 'MILES'
+            on_release: app.handle_calculate_km()
+        Button:
+            text: 'UP'
+            color: (0, 10, 0, 1)
+            on_press: app.handle_increment(1)
+        Button:
+            text: 'DOWN'
+            color: (10, 0, 0, 1)
+            on_press: app.handle_increment(-1)
+
+    Label:
+        id: output_label
+        font_size: 48
+        text: ''
+        color: (0, 10, 0, 1)
